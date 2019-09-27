@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto;
+
+service API {
+  rpc Request(RequestInterface) returns (Response){}
+}
+
+message RequestInterface {
+  uint64 id = 1;
+  string message = 2;
+}
+
+message Response {
+  uint64 code = 1;
+  RequestInterface data = 2;
+}
